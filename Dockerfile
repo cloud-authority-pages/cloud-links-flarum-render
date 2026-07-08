@@ -1,6 +1,7 @@
 FROM node:20-alpine
 WORKDIR /app
-RUN npm init -y && npm install express body-parser
+RUN npm init -y && npm install express
 COPY forum.js .
-EXPOSE 8000
+ENV PORT=3000
+EXPOSE 3000
 CMD ["node", "forum.js"]
